@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="author" content="Eric Tchong" />
+
+<meta name="date" content="2019-06-04" />
+
+<title>Getting Started</title>
+
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#header {
+text-align: center;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">Getting Started</h1>
+<h4 class="author"><em>Eric Tchong</em></h4>
+<h4 class="date"><em>2019-06-04</em></h4>
+
+
+<div id="TOC">
+<ul>
+<li><a href="#timeline-feed">Timeline Feed</a></li>
+<li><a href="#get-followers">Get Followers</a></li>
+<li><a href="#get-following">Get Following</a></li>
+<li><a href="#check-out-the-tests">Check out the Tests</a></li>
+</ul>
+</div>
+
+<p>First, load the <strong>Rinstapkg</strong> package and log in. There are two ways to authenticate:</p>
+<ol style="list-style-type: decimal">
+<li>OAuth 2.0</li>
+<li>Basic Username-Password</li>
+</ol>
+<p>It is recommended to use OAuth 2.0 if you apply for and are approved for an Instagram App. This way multiple users can use your app without having to explicity share their credentials with you. Note that the OAuth credentials will be stored in locally cached file entitled “.httr-oauth-Rinstapkg” in the current working directory.</p>
+<p>If you do not have an approved app, you can still use this package by providing your username and password.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">library</span>(Rinstapkg)</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="kw">ig_auth</span>(<span class="dt">username =</span> <span class="st">&quot;MY_USERNAME&quot;</span>, <span class="dt">password =</span> <span class="st">&quot;MY_PASSWORD&quot;</span>) </a></code></pre></div>
+<p>After logging in with <code>ig_auth()</code>, you can check your connectivity by looking at the information returned about your timeline (<code>ig_my_timeline()</code>), inbox (<code>ig_my_inbox()</code>), or recent activity (<code>ig_my_recent_activity()</code>). It should be information about you!</p>
+<div id="timeline-feed" class="section level3">
+<h3>Timeline Feed</h3>
+<p>A simple function to start with is verifying that you can retrieve your timeline as it would appear in the Instagramm app or online. This function returns data that would appear in the authenticated user’s timeline feed. By default, the data is returned as a tidy <code>tbl_df</code> where each row represents one post from the feed. If you prefer to work with a list format, then just specify <code>return_df=FALSE</code> as an argument.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1">timeline_results &lt;-<span class="st"> </span><span class="kw">ig_my_timeline</span>()</a>
+<a class="sourceLine" id="cb2-2" title="2">timeline_results</a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="co">#&gt; # A tibble: 16 x 37</span></a>
+<a class="sourceLine" id="cb2-4" title="4"><span class="co">#&gt;    taken_at      pk id    device_timestamp media_type code </span></a>
+<a class="sourceLine" id="cb2-5" title="5"><span class="co">#&gt;       &lt;int&gt;   &lt;dbl&gt; &lt;chr&gt;            &lt;dbl&gt;      &lt;int&gt; &lt;chr&gt;</span></a>
+<a class="sourceLine" id="cb2-6" title="6"><span class="co">#&gt;  1   1.56e9 2.03e18 2034…  155676208810893          1 Bw8V…</span></a>
+<a class="sourceLine" id="cb2-7" title="7"><span class="co">#&gt;  2   1.56e9 2.02e18 2024…  155552010984491          1 BwXT…</span></a>
+<a class="sourceLine" id="cb2-8" title="8"><span class="co">#&gt;  3   1.55e9 2.01e18 2012… 1554147789723231          1 Bvua…</span></a>
+<a class="sourceLine" id="cb2-9" title="9"><span class="co">#&gt;  4   1.55e9 1.99e18 1994… 1551925346931404          1 BusL…</span></a>
+<a class="sourceLine" id="cb2-10" title="10"><span class="co">#&gt;  5   1.55e9 1.99e18 1991… 1551641044183919          1 Bujt…</span></a>
+<a class="sourceLine" id="cb2-11" title="11"><span class="co">#&gt;  6   1.55e9 1.99e18 1985… 1550918831604424          1 BuOL…</span></a>
+<a class="sourceLine" id="cb2-12" title="12"><span class="co">#&gt;  7   1.55e9 1.98e18 1982… 1550540314361522          1 BuC6…</span></a>
+<a class="sourceLine" id="cb2-13" title="13"><span class="co">#&gt;  8   1.55e9 1.98e18 1981…  155045410572131          1 BuAV…</span></a>
+<a class="sourceLine" id="cb2-14" title="14"><span class="co">#&gt;  9   1.55e9 1.98e18 1981… 1550455167737230          1 BuAW…</span></a>
+<a class="sourceLine" id="cb2-15" title="15"><span class="co">#&gt; 10   1.55e9 1.98e18 1976… 1549857235614429          1 Btui…</span></a>
+<a class="sourceLine" id="cb2-16" title="16"><span class="co">#&gt; 11   1.55e9 1.97e18 1973… 1549464013913359          1 Bti0…</span></a>
+<a class="sourceLine" id="cb2-17" title="17"><span class="co">#&gt; 12   1.55e9 1.97e18 1972… 1549402375783967          1 Btg_…</span></a>
+<a class="sourceLine" id="cb2-18" title="18"><span class="co">#&gt; 13   1.55e9 1.97e18 1968… 1548890866357063          1 BtRv…</span></a>
+<a class="sourceLine" id="cb2-19" title="19"><span class="co">#&gt; 14   1.55e9 1.97e18 1969… 1548970299424940          1 BtUG…</span></a>
+<a class="sourceLine" id="cb2-20" title="20"><span class="co">#&gt; 15   1.55e9 1.97e18 1969… 1548961006833604          1 BtT0…</span></a>
+<a class="sourceLine" id="cb2-21" title="21"><span class="co">#&gt; 16   1.55e9 1.97e18 1969… 1548955131255990          1 BtTp…</span></a>
+<a class="sourceLine" id="cb2-22" title="22"><span class="co">#&gt; # … with 31 more variables: client_cache_key &lt;chr&gt;, filter_type &lt;int&gt;,</span></a>
+<a class="sourceLine" id="cb2-23" title="23"><span class="co">#&gt; #   image_versions2 &lt;list&gt;, original_width &lt;int&gt;, original_height &lt;int&gt;,</span></a>
+<a class="sourceLine" id="cb2-24" title="24"><span class="co">#&gt; #   location &lt;list&gt;, lat &lt;dbl&gt;, lng &lt;dbl&gt;, user &lt;list&gt;,</span></a>
+<a class="sourceLine" id="cb2-25" title="25"><span class="co">#&gt; #   can_viewer_reshare &lt;lgl&gt;, caption_is_edited &lt;lgl&gt;,</span></a>
+<a class="sourceLine" id="cb2-26" title="26"><span class="co">#&gt; #   direct_reply_to_author_enabled &lt;lgl&gt;, comment_likes_enabled &lt;lgl&gt;,</span></a>
+<a class="sourceLine" id="cb2-27" title="27"><span class="co">#&gt; #   comment_threading_enabled &lt;lgl&gt;, has_more_comments &lt;lgl&gt;,</span></a>
+<a class="sourceLine" id="cb2-28" title="28"><span class="co">#&gt; #   max_num_visible_preview_comments &lt;int&gt;,</span></a>
+<a class="sourceLine" id="cb2-29" title="29"><span class="co">#&gt; #   can_view_more_preview_comments &lt;lgl&gt;, comment_count &lt;int&gt;,</span></a>
+<a class="sourceLine" id="cb2-30" title="30"><span class="co">#&gt; #   inline_composer_display_condition &lt;chr&gt;, like_count &lt;int&gt;,</span></a>
+<a class="sourceLine" id="cb2-31" title="31"><span class="co">#&gt; #   has_liked &lt;lgl&gt;, likers &lt;list&gt;, photo_of_you &lt;lgl&gt;, caption &lt;list&gt;,</span></a>
+<a class="sourceLine" id="cb2-32" title="32"><span class="co">#&gt; #   can_viewer_save &lt;lgl&gt;, organic_tracking_token &lt;chr&gt;, preview &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb2-33" title="33"><span class="co">#&gt; #   next_max_id &lt;dbl&gt;, preview_comments &lt;list&gt;, usertags &lt;list&gt;,</span></a>
+<a class="sourceLine" id="cb2-34" title="34"><span class="co">#&gt; #   has_viewer_saved &lt;lgl&gt;</span></a></code></pre></div>
+</div>
+<div id="get-followers" class="section level3">
+<h3>Get Followers</h3>
+<p>With the <code>ig_get_followers()</code> function you can retrieve a <code>tbl_df</code> of all the users that follow a particular user. Just provide the <code>user_id</code> of the account whose followers you would like to get. <strong>NOTE</strong>: The Instagram APIs use Ids to retrieve information so instead of giving the account’s username (typically starting with an @symbol), you need to first grab the <code>user_id</code> of that account using the username, then supply it to the <code>ig_get_followers()</code> function.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="co"># Get Justin&#39;s Biebers beliebers!</span></a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="co"># Side Note: A belieber is a HUGE Justin Bieber fan.</span></a>
+<a class="sourceLine" id="cb3-3" title="3">bieber_user_id &lt;-<span class="st"> </span><span class="kw">ig_get_user_id</span>(<span class="st">&quot;justinbieber&quot;</span>)</a>
+<a class="sourceLine" id="cb3-4" title="4">follower_results &lt;-<span class="st"> </span><span class="kw">ig_get_followers</span>(bieber_user_id)</a>
+<a class="sourceLine" id="cb3-5" title="5">follower_results</a>
+<a class="sourceLine" id="cb3-6" title="6"><span class="co">#&gt; # A tibble: 2,200 x 9</span></a>
+<a class="sourceLine" id="cb3-7" title="7"><span class="co">#&gt;         pk username full_name is_private profile_pic_url profile_pic_id</span></a>
+<a class="sourceLine" id="cb3-8" title="8"><span class="co">#&gt;      &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;     &lt;lgl&gt;      &lt;chr&gt;           &lt;chr&gt;         </span></a>
+<a class="sourceLine" id="cb3-9" title="9"><span class="co">#&gt;  1 8.22e 9 sina_gl  Sina 💫   FALSE      https://sconte… 2022407376241…</span></a>
+<a class="sourceLine" id="cb3-10" title="10"><span class="co">#&gt;  2 8.33e 9 rubin_a… Rubin     TRUE       https://sconte… 2060968303209…</span></a>
+<a class="sourceLine" id="cb3-11" title="11"><span class="co">#&gt;  3 1.55e 7 andreak… andrea k… FALSE      https://sconte… 1706926841473…</span></a>
+<a class="sourceLine" id="cb3-12" title="12"><span class="co">#&gt;  4 9.29e 9 lxscomu… #lxsComu… FALSE      https://sconte… 1946233590280…</span></a>
+<a class="sourceLine" id="cb3-13" title="13"><span class="co">#&gt;  5 7.28e 9 tot_sam… Мой прик… FALSE      https://sconte… 1966779582023…</span></a>
+<a class="sourceLine" id="cb3-14" title="14"><span class="co">#&gt;  6 5.59e 9 interes… Interest… FALSE      https://sconte… 1535919580806…</span></a>
+<a class="sourceLine" id="cb3-15" title="15"><span class="co">#&gt;  7 8.09e 9 medhat_… M. R      TRUE       https://sconte… 1813643900974…</span></a>
+<a class="sourceLine" id="cb3-16" title="16"><span class="co">#&gt;  8 5.80e 9 oles.ki… &quot;⚽Oles⚽ … FALSE      https://sconte… 2035064383836…</span></a>
+<a class="sourceLine" id="cb3-17" title="17"><span class="co">#&gt;  9 5.44e 9 __n__k_… N A N D … FALSE      https://sconte… 2060384804427…</span></a>
+<a class="sourceLine" id="cb3-18" title="18"><span class="co">#&gt; 10 1.43e10 samanth… Samantha… FALSE      https://sconte… &lt;NA&gt;          </span></a>
+<a class="sourceLine" id="cb3-19" title="19"><span class="co">#&gt; # … with 2,190 more rows, and 3 more variables: is_verified &lt;lgl&gt;,</span></a>
+<a class="sourceLine" id="cb3-20" title="20"><span class="co">#&gt; #   has_anonymous_profile_picture &lt;lgl&gt;, latest_reel_media &lt;int&gt;</span></a></code></pre></div>
+<p>In the example above you’ll notice that we didn’t retrieve all 100M+ followers that Justin Bieber has. By default the function only returns the top 10 pages of followers, but you can set the <code>max_pages</code> argument equal to <code>Inf</code> to return all of them. Caution: This might take awhile!</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="co"># return all 100M+ followers of Justin Bieber</span></a>
+<a class="sourceLine" id="cb4-2" title="2">follower_results &lt;-<span class="st"> </span><span class="kw">ig_get_followers</span>(bieber_user_id, <span class="dt">max_pages =</span> <span class="ot">Inf</span>)</a></code></pre></div>
+</div>
+<div id="get-following" class="section level3">
+<h3>Get Following</h3>
+<p>With the <code>ig_get_following()</code> function you can retrieve a <code>tbl_df</code> of all the users that a particular user is following. For example, Justin Bieber follows ~100 users. Who are those lucky few?</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">following_results &lt;-<span class="st"> </span><span class="kw">ig_get_following</span>(bieber_user_id)</a>
+<a class="sourceLine" id="cb5-2" title="2">following_results</a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="co">#&gt; # A tibble: 181 x 10</span></a>
+<a class="sourceLine" id="cb5-4" title="4"><span class="co">#&gt;         pk username full_name is_private profile_pic_url profile_pic_id</span></a>
+<a class="sourceLine" id="cb5-5" title="5"><span class="co">#&gt;      &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;     &lt;lgl&gt;      &lt;chr&gt;           &lt;chr&gt;         </span></a>
+<a class="sourceLine" id="cb5-6" title="6"><span class="co">#&gt;  1 6.96e 9 redcarp… 💕 ZaZa 💕… FALSE      https://sconte… 2035788434706…</span></a>
+<a class="sourceLine" id="cb5-7" title="7"><span class="co">#&gt;  2 2.16e 8 officia… Brandon … FALSE      https://sconte… 2027136821162…</span></a>
+<a class="sourceLine" id="cb5-8" title="8"><span class="co">#&gt;  3 2.91e 7 nickcan… NICK CAN… FALSE      https://sconte… 1896844691930…</span></a>
+<a class="sourceLine" id="cb5-9" title="9"><span class="co">#&gt;  4 4.28e 7 bertsho… Bert Wei… FALSE      https://sconte… &lt;NA&gt;          </span></a>
+<a class="sourceLine" id="cb5-10" title="10"><span class="co">#&gt;  5 5.50e 8 benjami… Business… FALSE      https://sconte… 2028127917154…</span></a>
+<a class="sourceLine" id="cb5-11" title="11"><span class="co">#&gt;  6 1.89e 8 nickjon… Nick Jon… FALSE      https://sconte… 2041658194653…</span></a>
+<a class="sourceLine" id="cb5-12" title="12"><span class="co">#&gt;  7 8.01e 9 lalalal… LISA      FALSE      https://sconte… 2017225651148…</span></a>
+<a class="sourceLine" id="cb5-13" title="13"><span class="co">#&gt;  8 1.86e 8 teddysp… Ed Sheer… FALSE      https://sconte… 2050041949683…</span></a>
+<a class="sourceLine" id="cb5-14" title="14"><span class="co">#&gt;  9 1.11e10 hdwg1    &quot;&quot;        TRUE       https://instag… &lt;NA&gt;          </span></a>
+<a class="sourceLine" id="cb5-15" title="15"><span class="co">#&gt; 10 2.98e 7 kriskli… Kristin … FALSE      https://sconte… 1698661949418…</span></a>
+<a class="sourceLine" id="cb5-16" title="16"><span class="co">#&gt; # … with 171 more rows, and 4 more variables: is_verified &lt;lgl&gt;,</span></a>
+<a class="sourceLine" id="cb5-17" title="17"><span class="co">#&gt; #   has_anonymous_profile_picture &lt;lgl&gt;, latest_reel_media &lt;int&gt;,</span></a>
+<a class="sourceLine" id="cb5-18" title="18"><span class="co">#&gt; #   is_favorite &lt;lgl&gt;</span></a></code></pre></div>
+</div>
+<div id="check-out-the-tests" class="section level3">
+<h3>Check out the Tests</h3>
+<p>The <strong>Rinstapkg</strong> package has quite a bit of unit test coverage. These tests are an excellent source of examples because they cover most all cases of utilizing the package functions, which goes beyond what we have covered here in the “Getting Started” vignette.</p>
+</div>
+
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
